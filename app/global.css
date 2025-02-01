@@ -33,6 +33,10 @@ html {
   min-width: 360px;
 }
 
+body {
+  @apply tracking-wide font-stretch-semi-expanded;  
+}
+
 .prose .anchor {
   @apply absolute invisible no-underline;
 
