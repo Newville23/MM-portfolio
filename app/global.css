@@ -150,5 +150,5 @@ table {
 }
 
 .title {
-  text-wrap: balance;
+  @apply text-8xl leading-[1.2] font-medium uppercase tracking-[0.4rem];
 }
