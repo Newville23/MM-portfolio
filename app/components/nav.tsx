@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { heatherFont } from "app/lib/fonts";
+import Container from "./container";
+import Logo from "./logo";
 const navItems = {
   "/": {
     name: "work",
@@ -11,15 +13,18 @@ const navItems = {
 
 export function Navbar() {
   return (
-    <aside className="mb-16">
-      <div className="lg:sticky lg:top-20">
+    <Container>
+      <div className="top-10 fixed max-w-6xl w-full">
         <nav
           className="flex flex-row justify-between relative px-0 pb-0 fade md:overflow-hidden scroll-pr-6 md:relative"
           id="nav"
         >
           <div>
-            <Link href={"/"} className={`transition-all uppercase text-5xl ${heatherFont.className}`}>
-              M
+            <Link
+              href={"/"}
+              className={`transition-all uppercase text-5xl ${heatherFont.className}`}
+            >
+              <Logo/>
             </Link>
           </div>
           <div className="flex flex-row space-x-0">
@@ -37,6 +42,6 @@ export function Navbar() {
           </div>
         </nav>
       </div>
-    </aside>
+    </Container>
   );
 }
