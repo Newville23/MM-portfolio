@@ -160,3 +160,11 @@ table {
 .project-img {
   @apply absolute top-14 left-1/2 -translate-x-1/2;
 }
+
+.smooth-container{
+  @apply max-h-screen overflow-y-scroll snap-y snap-mandatory;
+}
+
+.smooth-section {
+ @apply snap-start h-screen;
+}

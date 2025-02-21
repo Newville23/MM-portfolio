@@ -13,8 +13,8 @@ const navItems = {
 
 export function Navbar() {
   return (
-    <Container>
-      <div className="top-10 fixed max-w-6xl w-full">
+    <div className="top-10 fixed w-full">
+      <Container>
         <nav
           className="flex flex-row justify-between relative px-0 pb-0 fade md:overflow-hidden scroll-pr-6 md:relative"
           id="nav"
@@ -24,7 +24,7 @@ export function Navbar() {
               href={"/"}
               className={`transition-all uppercase text-5xl ${heatherFont.className}`}
             >
-              <Logo/>
+              <Logo />
             </Link>
           </div>
           <div className="flex flex-row space-x-0">
@@ -41,7 +41,7 @@ export function Navbar() {
             })}
           </div>
         </nav>
-      </div>
-    </Container>
+      </Container>
+    </div>
   );
 }

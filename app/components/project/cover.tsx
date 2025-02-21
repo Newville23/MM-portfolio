@@ -17,11 +17,11 @@ export default function Cover({
   };
 }) {
   return (
-    <section className="snap-start text-center h-screen">
+    <section className="smooth-section text-center bg-black">
       <div className="flex flex-col justify-start h-full relative">
-        <p className={`mt-28 -mb-1.5 sub-title`}>{category}</p>
+        <p className={`mt-28 -mb-1.5 sub-title text-yellow-500`}>{category}</p>
         <h2
-          className={`uppercase text-[340px] leading-[0.9] ${heatherFont.className}`}
+          className={`uppercase text-[340px] leading-[0.9] text-yellow-500 ${heatherFont.className}`}
         >
           {name}
         </h2>
