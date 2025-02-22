@@ -13,7 +13,7 @@ const navItems = {
 
 export function Navbar() {
   return (
-    <div className="top-10 fixed w-full">
+    <div className="top-10 fixed w-full z-10">
       <Container>
         <nav
           className="flex flex-row justify-between relative px-0 pb-0 fade md:overflow-hidden scroll-pr-6 md:relative"

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Container from "../container";
 
 export default function Overview({ projectData }) {
-  const { tags, agency, image } = projectData;
+  const { name, tags, agency, image, technique } = projectData;
   return (
     <section className="relative smooth-section text-white">
       <Container>
@@ -10,24 +10,33 @@ export default function Overview({ projectData }) {
           <div className="absolute inset-0 object-cover">
             <Image
               fill
-              src={image.media[0].url}
+              src={image.overview.lg}
               alt={`${projectData.title} overview image`}
             />
           </div>
           <div className="basis-80 pr-20 z-0">
-            <div>
-              <h2 className="uppercase">Tag</h2>
+            <div className="mb-4 ">
+              <h2 className="uppercase font-light text-xs/tight">Tag</h2>
               {tags.map((tag) => (
-                <p>{tag}</p>
+                <p className="uppercase font-extrabold text-sm/tight">{tag}</p>
+              ))}
+            </div>
+            <div className="mb-4">
+              <h2 className="uppercase font-light text-xs/tight">Agencia</h2>
+              <p className="uppercase font-extrabold text-sm/tight">{agency}</p>
+            </div>
+            <div className="mb-14">
+              <h2 className="font-light text-xs">Técnica</h2>
+              {technique.map((item) => (
+                <p className="font-light text-xs">{item}</p>
               ))}
             </div>
             <div>
-              <h2 className="uppercase">Agencia</h2>
-              <p>{agency}</p>
-            </div>
-            <div>
-              <h3>{projectData.title}</h3>
-              <p>{projectData.description}</p>
+              <h3 className="uppercase font-extrabold text-xs">
+                {projectData.title}
+              </h3>
+              <h4 className="uppercase font-extrabold text-xs">{`proyecto: ${name}`}</h4>
+              <p className="font-light text-xs">{projectData.description}</p>
             </div>
           </div>
         </div>
