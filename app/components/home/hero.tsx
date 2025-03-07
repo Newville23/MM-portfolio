@@ -1,7 +1,22 @@
+"use client"
+import { useEffect, useRef } from "react";
 import { heatherFont } from "../../lib/fonts";
+import { useNavTheme } from "app/providers/navTheme";
+import { useInView } from "motion/react";
+
 export default function Hero() {
+  const { setNavTheme } = useNavTheme();
+  const ref = useRef(null);
+  const isInView = useInView(ref,{amount:0.7});
+
+  useEffect(() => {
+    if (isInView) {
+      setNavTheme("dark");
+    }
+  }, [isInView]);
+
   return (
-    <section className="snap-start text-center h-screen">
+    <div ref={ref} className="snap-start text-center h-screen">
       <div className="flex flex-col justify-center h-full">
         <h1 className={`mb-8 title ${heatherFont.className}`}>
           Hola soy Matteo,
@@ -13,6 +28,6 @@ export default function Hero() {
   food, beverage, ideas creativas.`}
         </p>
       </div>
-    </section>
+    </div>
   );
 }

@@ -1,7 +1,10 @@
+"use client"
+import { motion } from "motion/react";
 import Link from "next/link";
 import { heatherFont } from "app/lib/fonts";
 import Container from "./container";
 import Logo from "./logo";
+import { useNavTheme } from "app/providers/navTheme";
 const navItems = {
   "/": {
     name: "work",
@@ -12,8 +15,18 @@ const navItems = {
 };
 
 export function Navbar() {
+  const { navTheme } = useNavTheme();
   return (
-    <div className="top-10 fixed w-full z-10">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className={`top-10 z-10 fixed left-0 w-full p-4 transition-all duration-300 ${
+        navTheme === "dark"
+          ? "text-black"
+          : "text-yellow-500"
+      }`}
+    >
       <Container>
         <nav
           className="flex flex-row justify-between relative px-0 pb-0 fade md:overflow-hidden scroll-pr-6 md:relative"
@@ -24,7 +37,7 @@ export function Navbar() {
               href={"/"}
               className={`transition-all uppercase text-5xl ${heatherFont.className}`}
             >
-              <Logo />
+              <Logo color={navTheme === "dark" ? "#000000" : "#ffffff"}/>
             </Link>
           </div>
           <div className="flex flex-row space-x-0">
@@ -42,6 +55,6 @@ export function Navbar() {
           </div>
         </nav>
       </Container>
-    </div>
+    </motion.div>
   );
 }

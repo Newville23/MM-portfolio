@@ -3,6 +3,7 @@ import Container from "../container";
 
 export default function Overview({ projectData }) {
   const { name, tags, agency, image, technique } = projectData;
+
   return (
     <section className="relative smooth-section text-white">
       <Container>
@@ -17,8 +18,13 @@ export default function Overview({ projectData }) {
           <div className="basis-80 pr-20 z-0">
             <div className="mb-4 ">
               <h2 className="uppercase font-light text-xs/tight">Tag</h2>
-              {tags.map((tag) => (
-                <p className="uppercase font-extrabold text-sm/tight">{tag}</p>
+              {tags.map((tag, idx) => (
+                <p
+                  key={`$tag-${idx}`}
+                  className="uppercase font-extrabold text-sm/tight"
+                >
+                  {tag}
+                </p>
               ))}
             </div>
             <div className="mb-4">
@@ -28,7 +34,9 @@ export default function Overview({ projectData }) {
             <div className="mb-14">
               <h2 className="font-light text-xs">Técnica</h2>
               {technique.map((item) => (
-                <p className="font-light text-xs">{item}</p>
+                <p key={`techniques-${item}`} className="font-light text-xs">
+                  {item}
+                </p>
               ))}
             </div>
             <div>

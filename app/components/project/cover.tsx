@@ -1,5 +1,9 @@
+"use client";
+import { useInView } from "motion/react";
 import { heatherFont } from "../../lib/fonts";
 import Image from "next/image";
+import { useNavTheme } from "app/providers/navTheme";
+import { useEffect, useRef } from "react";
 
 export default function Cover({
   category,
@@ -16,8 +20,18 @@ export default function Cover({
     };
   };
 }) {
+  const { setNavTheme } = useNavTheme();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.7 });
+
+  useEffect(() => {
+    if (isInView) {
+      setNavTheme("light");
+    }
+  }, [isInView]);
+
   return (
-    <section className="smooth-section text-center bg-black">
+    <section ref={ref} className="smooth-section text-center bg-black">
       <div className="flex flex-col justify-start h-full relative">
         <p className={`mt-28 -mb-1.5 sub-title text-yellow-500`}>{category}</p>
         <h2
