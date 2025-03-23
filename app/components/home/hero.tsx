@@ -1,13 +1,22 @@
-"use client"
+"use client";
 import { useEffect, useRef } from "react";
 import { heatherFont } from "../../lib/fonts";
 import { useNavTheme } from "app/providers/navTheme";
 import { useInView } from "motion/react";
+import Image from "next/image";
+
+const HERO_DATA = {
+  media:{url:"/projects/recetario-cover.jpg"},
+  title: `Hola soy Matteo,
+          Graphic Designer & Art Director`,
+  subTitle: `CREATIVO CON MÁS DE 10 AÑOS DE EXPERIENCIA ESPECIALIZADO EN EL PACKAGING DESIGN Y BRAND DESIGN, CON ENFOQUE Y PASIÓN POR EL MUNDO DE LOS VINOS, ACEITES.
+DESARROLLO BRAND GUIDELINE, LOGOTIPOS, ETIQUETAS, PACKAGING, CORPORATE IDENTITY.`,
+};
 
 export default function Hero() {
   const { setNavTheme } = useNavTheme();
   const ref = useRef(null);
-  const isInView = useInView(ref,{amount:0.7});
+  const isInView = useInView(ref, { amount: 0.7 });
 
   useEffect(() => {
     if (isInView) {
@@ -16,17 +25,21 @@ export default function Hero() {
   }, [isInView]);
 
   return (
-    <div ref={ref} className="snap-start text-center h-screen">
-      <div className="flex flex-col justify-center h-full">
-        <h1 className={`mb-8 title ${heatherFont.className}`}>
-          Hola soy Matteo,
-          <br /> Graphic Designer & Art Director
-        </h1>
-        <p className="uppercase tracking-[0.2rem] text-sm font-bold max-w-3xl mx-auto leading-7">
-          {`creativo con más de 10 años de experiencia especializado en el packaging design y brand design.
-  con enfoque y pasion por el mundo de los vinos y aceites. poner texto sobre mis skills: brand guideline,
-  food, beverage, ideas creativas.`}
-        </p>
+    <div ref={ref} className="relative snap-start text-center h-screen bg-amber-900">
+      <div className="absolute inset-0 object-cover">
+        <Image fill src={HERO_DATA.media.url} alt="Hero image" />
+      </div>
+      <div className="flex justify-start h-full">
+        <div className="h-full text-left pl-20 pr-10 basis-[30%] bg-amber-400 flex flex-col justify-center opacity-85">
+          <h1
+            className={`mb-8 text-5xl font-medium leading-[1] uppercase tracking-widest ${heatherFont.className}`}
+          >
+            {HERO_DATA.title}
+          </h1>
+          <p className="uppercase tracking-widest text-[0.65rem] font-bold mx-auto">
+            {HERO_DATA.subTitle}
+          </p>
+        </div>
       </div>
     </div>
   );
