@@ -16,7 +16,7 @@ export default function Contact() {
   }, [isInView]);
 
   return (
-    <section ref={ref} className="snap-start text-center h-screen">
+    <section id="contact" ref={ref} className="snap-start text-center h-screen">
       <div className="flex flex-col justify-center h-full">
         <h2 className={`mb-8 title text-8xl ${heatherFont.className}`}>contact</h2>
         <div className="uppercase tracking-[0.2rem] text-sm font-bold leading-7">

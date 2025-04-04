@@ -6,10 +6,10 @@ import Container from "./container";
 import Logo from "./logo";
 import { useNavTheme } from "app/providers/navTheme";
 const navItems = {
-  "/": {
+  "/projects": {
     name: "work",
   },
-  "/blog": {
+  "/#contact": {
     name: "contact",
   },
 };
