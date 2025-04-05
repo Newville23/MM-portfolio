@@ -9,6 +9,8 @@ export default function Cover({
   category,
   name,
   image,
+  onMouseEnter,
+  onMouseLeave,
 }: {
   category: string;
   name: string;
@@ -19,6 +21,8 @@ export default function Cover({
       height: number;
     };
   };
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }) {
   const { setNavTheme } = useNavTheme();
   const ref = useRef(null);
@@ -31,7 +35,12 @@ export default function Cover({
   }, [isInView]);
 
   return (
-    <section ref={ref} className="smooth-section text-center bg-black">
+    <section 
+      ref={ref} 
+      className="smooth-section text-center bg-black cursor-none"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       <div className="flex flex-col justify-start h-full relative">
         <p className={`mt-28 -mb-1.5 sub-title text-yellow-500`}>{category}</p>
         <h2
