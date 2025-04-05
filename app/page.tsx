@@ -32,8 +32,13 @@ export default function Page({sectionRefs}:{sectionRefs: any}) {
           transform: `translate(-50%, -50%)`,
         }}
       >
-        <div className="w-32 h-32 flex items-center justify-center">
-          <span className="text-yellow-500 font-bold tracking-wider text-xl underline underline-offset-8">View more </span>
+        <div className="w-auto h-32 flex items-center justify-center">
+          <span className="text-yellow-500 font-bold tracking-wider text-xl underline underline-offset-8 mr-2">View more </span>
+          <span>
+          <svg class="stroke-yellow-500 size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+          </svg>
+          </span>
         </div>
       </div>
 

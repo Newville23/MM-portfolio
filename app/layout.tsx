@@ -53,7 +53,7 @@ export default function RootLayout({
       )}
     >
       <body className="antialiased">
-        <main className="relative flex-auto min-w-0 flex flex-col px-2 md:px-0">
+        <main className="relative flex-auto min-w-0 flex flex-col px-0">
           <NavThemeProvider>
             <Navbar />
             {children}
