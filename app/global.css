@@ -33,6 +33,10 @@ html {
   min-width: 360px;
 }
 
+body {
+  @apply tracking-wide font-stretch-semi-expanded;  
+}
+
 .prose .anchor {
   @apply absolute invisible no-underline;
 
@@ -146,5 +150,21 @@ table {
 }
 
 .title {
-  text-wrap: balance;
+  @apply leading-[1.2] font-medium uppercase tracking-[0.4rem];
+}
+
+.sub-title {
+  @apply uppercase tracking-[0.2rem] text-sm font-extrabold;
+}
+
+.project-img {
+  @apply absolute left-1/2 -translate-x-1/2;
+}
+
+.smooth-container{
+  @apply max-h-screen overflow-y-scroll snap-y snap-mandatory;
+}
+
+.smooth-section {
+ @apply snap-start h-screen;
 }
