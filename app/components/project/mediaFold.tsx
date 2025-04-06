@@ -9,8 +9,13 @@ export default function MediaFold({
 }) {
   return (
     <section className="relative smooth-section h-screen">
-      <div className="absolute inset-0 object-cover">
-        <Image fill src={mediaURL} alt={`${title} overview image`} />
+      <div className="absolute inset-0 px-4 md:px-0">
+        <Image 
+          fill 
+          src={mediaURL} 
+          alt={`${title} overview image`} 
+          className="object-cover rounded-lg md:rounded-none"
+        />
       </div>
     </section>
   );

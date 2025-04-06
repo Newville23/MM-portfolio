@@ -37,7 +37,7 @@ export default function Cover({
       ref={ref} 
       className="smooth-section text-center bg-black"
     >
-      <div className="flex flex-col justify-center h-full relative">
+      <div className="flex flex-col justify-center h-full relative px-4 md:px-0">
         <motion.div
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
@@ -48,7 +48,7 @@ export default function Cover({
         >
           <p className={`-mb-1.5 sub-title text-yellow-500`}>{category}</p>
           <h2
-            className={`uppercase text-[340px] leading-[0.9] text-yellow-500 ${heatherFont.className}`}
+            className={`uppercase text-[180px] md:text-[340px] leading-[0.9] text-yellow-500 ${heatherFont.className}`}
           >
             {name}
           </h2>
@@ -62,7 +62,7 @@ export default function Cover({
             opacity: { duration: 0.4 },
             scale: { duration: 0.6 }
           }}
-          className="project-img mt-8"
+          className="project-img mt-4 md:mt-8"
         >
           <Image
             src={image.desktop.url}

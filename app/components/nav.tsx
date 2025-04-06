@@ -29,7 +29,7 @@ export function Navbar() {
     >
       <Container>
         <nav
-          className="flex flex-row justify-between relative px-0 pb-0 fade md:overflow-hidden scroll-pr-6 md:relative"
+          className="flex items-center flex-row justify-between relative px-0 pb-0 fade md:overflow-hidden scroll-pr-6 md:relative"
           id="nav"
         >
           <div>

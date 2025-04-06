@@ -76,48 +76,48 @@ export default function ProjectsPage() {
           </div>
         </div>
 
-             {/* Category Pills */}
-      <div className="relative z-30 py-8 px-4 md:px-16">
-        <div className="flex flex-wrap gap-4 mb-8">
-          {CATEGORIES.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
-                selectedCategory === category
-                  ? "bg-yellow-500 text-black"
-                  : "bg-white/10 text-white hover:bg-white/20"
-              }`}
-            >
-              {category.charAt(0).toUpperCase() + category.slice(1)}
-            </button>
-          ))}
-        </div>
+        {/* Category Pills */}
+        <div className="relative z-30 py-8 px-4 md:px-16">
+          <div className="flex flex-wrap gap-4 mb-8">
+            {CATEGORIES.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
+                  selectedCategory === category
+                    ? "bg-yellow-500 text-black"
+                    : "bg-white/10 text-white hover:bg-white/20"
+                }`}
+              >
+                {category.charAt(0).toUpperCase() + category.slice(1)}
+              </button>
+            ))}
+          </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {filteredProjects.map((project) => (
-            <Link 
-              key={project.slug} 
-              href={`/projects/${project.slug}`} 
-              className="group block"
-            >
-              <div className="overflow-hidden rounded-lg aspect-[16/9] relative transition-transform duration-300 group-hover:scale-[1.05] group-hover:translate-z-0 group-hover:translate3d">
-                <Image
-                  src={project.image.media[0].url}
-                  alt={project.name}
-                  width={400}
-                  height={225}
-                  className="object-cover w-full h-full"
-                />
-                <div className="absolute inset-0 border-3 border-transparent group-hover:border-yellow-500 transition-all duration-300" />
-              </div>
-              <h3 className="text-lg font-bold mt-2">{project.name}</h3>
-              <p className="text-sm text-gray-400">{project.agency}</p>
-            </Link>
-          ))}
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {filteredProjects.map((project) => (
+              <Link 
+                key={project.slug} 
+                href={`/projects/${project.slug}`} 
+                className="group block"
+              >
+                <div className="overflow-hidden rounded-lg aspect-[16/9] relative transition-transform duration-300 group-hover:scale-[1.05] group-hover:translate-z-0 group-hover:translate3d">
+                  <Image
+                    src={project.image.media[0].url}
+                    alt={project.name}
+                    width={400}
+                    height={225}
+                    className="object-cover w-full h-full"
+                  />
+                  <div className="absolute inset-0 border-3 border-transparent group-hover:border-yellow-500 transition-all duration-300" />
+                </div>
+                <h3 className="text-lg font-bold mt-2">{project.name}</h3>
+                <p className="text-sm text-gray-400">{project.agency}</p>
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
       </section>
     </div>
   );
