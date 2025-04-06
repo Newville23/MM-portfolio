@@ -21,7 +21,7 @@ export function Navbar() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className={`top-10 z-10 fixed left-0 w-full p-4 transition-all duration-300 ${
+      className={`top-10 z-50 fixed left-0 w-full p-4 transition-all duration-300 ${
         navTheme === "dark"
           ? "text-black"
           : "text-yellow-500"

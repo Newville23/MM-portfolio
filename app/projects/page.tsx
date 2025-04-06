@@ -54,7 +54,7 @@ export default function ProjectsPage() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Banner Section */}
-      <section className="relative h-[80vh] bg-black">
+      <section className="relative h-full bg-black">
         <div className="absolute inset-0">
           <Image 
             fill 
@@ -65,20 +65,19 @@ export default function ProjectsPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16">
+        <div className="relative z-30 pt-32 pl-8 md:pt-64 md:pl-16 text-amber-400">
           <div className="max-w-3xl">
             <h1 className={`title text-5xl md:text-8xl mb-4 uppercase font-bold ${heatherFont.className}`}>
               {BANNER_DATA.title}
             </h1>
-            <p className="text-xl uppercase tracking-widest mb-6">
+            <p className="text-xl uppercase tracking-widest mb-3">
               {BANNER_DATA.subtitle}
             </p>
           </div>
         </div>
-      </section>
 
-      {/* Category Pills */}
-      <section className="py-8 px-4 md:px-16">
+             {/* Category Pills */}
+      <div className="relative z-30 py-8 px-4 md:px-16">
         <div className="flex flex-wrap gap-4 mb-8">
           {CATEGORIES.map((category) => (
             <button
@@ -118,6 +117,7 @@ export default function ProjectsPage() {
             </Link>
           ))}
         </div>
+      </div>
       </section>
     </div>
   );
