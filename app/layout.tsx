@@ -1,26 +1,24 @@
-'use client'
 import "./global.css";
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
-import { Navbar } from "./components/nav";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import Footer from "./components/footer";
 import { baseUrl } from "./sitemap";
-import { NavThemeProvider } from "./providers/navTheme";
+import RootProvider from "./components/providers/root-provider";
+import { Analytics } from "@vercel/analytics/react";
+import Footer from "./components/footer";
+import { Navbar } from "./components/nav";
 
-/* export const metadata: Metadata = {
+ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Next.js Portfolio Starter",
-    template: "%s | Next.js Portfolio Starter",
+    default: "Matteo Manini Portfolio",
+    template: "Matteo Manini Portfolio",
   },
   description: "This is my portfolio.",
   openGraph: {
-    title: "My Portfolio",
+    title: "Matteo Manini Portfolio",
     description: "This is my portfolio.",
     url: baseUrl,
-    siteName: "My Portfolio",
+    siteName: "Matteo Manini Portfolio",
     locale: "en_US",
     type: "website",
   },
@@ -36,7 +34,7 @@ import { NavThemeProvider } from "./providers/navTheme";
     },
   },
 };
- */
+
 const cx = (...classes) => classes.filter(Boolean).join(" ");
 
 export default function RootLayout({
@@ -54,13 +52,12 @@ export default function RootLayout({
     >
       <body className="antialiased">
         <main className="relative flex-auto min-w-0 flex flex-col px-0">
-          <NavThemeProvider>
+          <RootProvider>
             <Navbar />
-            {children}
+              {children}
             <Footer />
             <Analytics />
-            <SpeedInsights />
-          </NavThemeProvider>
+          </RootProvider>
         </main>
       </body>
     </html>

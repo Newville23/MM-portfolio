@@ -18,8 +18,8 @@ export const PROJECTS = [
       ],
       desktop: {
         url: "/projects/ximenium/ximenium-cover.png",
-        height: 300,
-        width: 350,
+        height: 200,
+        width: 130,
       },
     },
   },
@@ -43,7 +43,7 @@ export const PROJECTS = [
       desktop: {
         url: "/projects/deseo/deseo-cover.png",
         height: 300,
-        width: 180,
+        width: 150,
       },
     },
   },

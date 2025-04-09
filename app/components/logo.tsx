@@ -5,7 +5,7 @@ export default function Logo({ color = "#000000" }: { color?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="750 350 500 500"
+      viewBox="750 350 400 400"
       width="70"
       height="70"
     >
