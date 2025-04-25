@@ -42,8 +42,9 @@ export default function Cover({
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
           transition={{
-            duration: 0.6,
-            ease: "easeOut"
+            duration: 0.4,
+            ease: "easeOut",
+            delay: 2.2
           }}
         >
           <p className={`-mb-1.5 sub-title text-yellow-500`}>{category}</p>
@@ -55,12 +56,12 @@ export default function Cover({
         </motion.div>
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
+          animate={{ opacity: 1, scale: 1.1 }}
           transition={{
-            duration: 0.6,
-            ease: "easeOut",
-            opacity: { duration: 0.4 },
-            scale: { duration: 0.6 }
+            ease: "easeIn",
+            opacity: { duration: 0.3 },
+            scale: { duration: 0.3 },
+            delay: 2.2
           }}
           className="project-img mt-4 md:mt-8"
         >

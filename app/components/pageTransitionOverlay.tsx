@@ -11,6 +11,7 @@ export default function PageTransitionOverlay() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
+    setShowOverlay(true);
     // Delay to simulate loading and play animation
     const hideOverlay = setTimeout(() => {
       setShowOverlay(false);
