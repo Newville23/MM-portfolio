@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { heatherFont } from "../../lib/fonts";
 import { useNavTheme } from "app/providers/navTheme";
 import { useInView } from "motion/react";
 
@@ -19,7 +18,7 @@ export default function Contact() {
   return (
     <section id="contact" ref={ref} className="snap-start text-center h-screen">
       <div className="flex flex-col justify-center h-full">
-        <h2 className={`mb-8 title text-8xl ${heatherFont.className}`}>contact</h2>
+        <h2 className="font-heather mb-8 title text-8xl">contact</h2>
         <div className="uppercase tracking-[0.2rem] text-sm font-extrabold leading-7">
           <p>matteo manini</p>
           <p>córdoba (españa)</p>
