@@ -24,7 +24,7 @@ export function HomeScreen() {
     <div className="max-h-screen overflow-y-scroll snap-y snap-mandatory">
       {/* Custom Cursor */}
       <div 
-        className={`fixed pointer-events-none z-50 transition-transform duration-300 ${
+        className={`fixed pointer-events-none z-50 transition-transform duration-150 ${
           isHovered ? 'scale-100' : 'scale-0'
         }`}
         style={{

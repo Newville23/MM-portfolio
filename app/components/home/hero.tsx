@@ -27,9 +27,11 @@ export default function Hero() {
       setNavTheme("dark");
       // Play video when in view
       if (videoRef.current) {
-        videoRef.current.play().catch(error => {
-          console.log("Video autoplay failed:", error);
-        });
+        setTimeout(() => {
+          videoRef.current?.play().catch(error => {
+            console.log("Video autoplay failed:", error);
+          });
+        }, 1000); 
       }
     } else {
       // Pause video when out of view

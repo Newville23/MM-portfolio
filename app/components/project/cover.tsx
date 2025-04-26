@@ -44,7 +44,7 @@ export default function Cover({
           transition={{
             duration: 0.4,
             ease: "easeOut",
-            delay: 2.2
+            delay: 1.2
           }}
         >
           <p className={`-mb-1.5 sub-title text-yellow-500`}>{category}</p>
@@ -61,7 +61,7 @@ export default function Cover({
             ease: "easeIn",
             opacity: { duration: 0.3 },
             scale: { duration: 0.3 },
-            delay: 2.2
+            delay: 1.2
           }}
           className="project-img mt-4 md:mt-8"
         >
