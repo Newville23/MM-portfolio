@@ -11,7 +11,7 @@ import Container from "../container";
 
 
 const BANNER_DATA = {
-  title: "Projects",
+  title: "Work",
   subtitle: "A collection of my selected works",
   media: { url: "/projects/recetario-cover.jpg" }
 };
@@ -45,21 +45,9 @@ export function ProjectsScreen() {
       {/* Hero Banner Section */}
       <section className="relative h-full bg-black">
         <Container>
-        <div className="absolute inset-0">
-          <Image 
-            fill 
-            src={BANNER_DATA.media.url} 
-            alt="Projects banner" 
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
-        </div>
-        <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black to-transparent" />
-        <div className="relative z-30 pt-32 md:pt-64  text-amber-400">
-          <div className="max-w-3xl">
-            <h1 className={`title text-5xl md:text-8xl mb-4 uppercase font-bold ${heatherFont.className}`}>
-              {BANNER_DATA.title}
-            </h1>
+        <div className="relative z-30 pt-32 md:pt-52  text-amber-400">
+          <div className="w-full flex flex-col justify-center items-center">
+          <h2 className="font-heather mb-8 title text-9xl">{BANNER_DATA.title}</h2>
             <p className="text-md uppercase tracking-widest mb-3">
               {BANNER_DATA.subtitle}
             </p>
