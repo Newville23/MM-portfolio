@@ -1,4 +1,16 @@
 @import 'tailwindcss';
+ 
+/*primary: FFB800, r 255- g 184- b 0*/
+
+@layer utilities {
+  .font-geist {
+    font-family: var(--font-geist);
+  }
+
+  .font-heather {
+    font-family: var(--font-heather);
+  }
+}
 
 ::selection {
   background-color: #47a3f3;

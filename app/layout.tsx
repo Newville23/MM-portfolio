@@ -1,13 +1,26 @@
 import "./global.css";
 import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
+import { Geist } from "next/font/google";
+import localFont from "next/font/local";
 import { baseUrl } from "./sitemap";
 import RootProvider from "./components/providers/root-provider";
 import { Analytics } from "@vercel/analytics/react";
 import Footer from "./components/footer";
 import { Navbar } from "./components/nav";
+import PageTransitionOverlay from "./components/pageTransitionOverlay";
 
- export const metadata: Metadata = {
+const geist = Geist({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-geist",
+});
+
+const heatherFont = localFont({
+  src: "../fonts/Heathergreen.woff",
+  variable:"--font-heather"
+});
+
+export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
     default: "Matteo Manini Portfolio",
@@ -47,14 +60,16 @@ export default function RootLayout({
       lang="en"
       className={cx(
         "scroll-smooth text-black bg-white dark:text-black dark:bg-yellow-500",
-        GeistSans.variable
+        geist.variable,
+        heatherFont.variable
       )}
     >
       <body className="antialiased">
         <main className="relative flex-auto min-w-0 flex flex-col px-0">
+          <PageTransitionOverlay/>
           <RootProvider>
             <Navbar />
-              {children}
+            {children}
             <Footer />
             <Analytics />
           </RootProvider>
